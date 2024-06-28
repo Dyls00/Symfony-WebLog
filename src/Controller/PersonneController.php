@@ -18,9 +18,14 @@ class PersonneController extends AbstractController
         $personne -> setFirstname('johane');
         $personne -> setName('dyls');
         $personne -> setAge(26);
+        $personne2 = new Personne();
+        $personne2 -> setFirstname('kieffer');
+        $personne2 -> setName('dyls');
+        $personne2 -> setAge(28);
 
         // Ajouter l'operation d'insertion de la personne
         $entityManager -> persist($personne);
+        $entityManager -> persist($personne2);
 
         // executer l'operation
 
