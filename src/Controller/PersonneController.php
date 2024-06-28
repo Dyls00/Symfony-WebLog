@@ -18,6 +18,7 @@ class PersonneController extends AbstractController
         $personne -> setFirstname('johane');
         $personne -> setName('dyls');
         $personne -> setAge(26);
+        
         $personne2 = new Personne();
         $personne2 -> setFirstname('kieffer');
         $personne2 -> setName('dyls');
@@ -28,9 +29,9 @@ class PersonneController extends AbstractController
         $entityManager -> persist($personne2);
 
         // executer l'operation
-
+        $entityManager -> flush();
         return $this->render('personne/details.html.twig', [
-            'personne' => '$personne',
+            'personne' => $personne,
         ]);
     }
 }
