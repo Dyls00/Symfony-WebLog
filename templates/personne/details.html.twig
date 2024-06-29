@@ -3,7 +3,8 @@
 {% block body %}
 
 {{ dump(personne)}}
-    <div class="alert alert-success">
+
+    <div class="alert alert-success" role="alert">
         {{ personne.firstname }} {{ personne.name }} a {{ personne.age }}
     </div>
 {%  endblock %}
