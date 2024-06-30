@@ -8,10 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-#[Route('/personne', name: 'default_personne')]
+#[Route('/personne')]
 class PersonneController extends AbstractController
 {
-    #[Route('/', name: 'app_personne')]
+    #[Route('/', name: 'personne_list')]
     public function index( ManagerRegistry $doctrine): Response
     {
         $repository = $doctrine ->getRepository(Personne::class);
@@ -24,11 +24,11 @@ class PersonneController extends AbstractController
     public function addPersonne( ManagerRegistry $doctrine): Response
     {
         $entityManager = $doctrine->getManager();
-       /* $personne = new Personne();
+       $personne = new Personne();
         $personne -> setFirstname('johane');
         $personne -> setName('dyls');
         $personne -> setAge(26);
-        
+
         $personne2 = new Personne();
         $personne2 -> setFirstname('kieffer');
         $personne2 -> setName('dyls');
@@ -39,9 +39,35 @@ class PersonneController extends AbstractController
         $entityManager -> persist($personne2);
 
         // executer l'operation
-        $entityManager -> flush();*/
+        $entityManager -> flush();
         return $this->render('personne/details.html.twig', [
-            /*'personne' => $personne,*/
+            'personne' => $personne,
+        ]);
+    }
+
+    #[Route('/{id<\d+>}', name: 'detail_personne')]
+    public function detail( ManagerRegistry $doctrine, $id): Response
+    {
+        $repository = $doctrine ->getRepository(Personne::class);
+        $personne = $repository ->find($id);
+        if(!$personne){
+            $this -> addFlash('erreur', "La personne d'id $id n'existe pas");
+            return $this -> redirectToRoute('personne_list');
+        }
+        return $this -> render('/personne/details.html.twig', [
+            'personne' => $personne
+        ]);
+    }
+
+    // fonction de pagination pour afficher un nombre de personne donné
+    #[Route('/all/{page?1}/{nbre?12}', name: 'all_personne')]
+    public function all( ManagerRegistry $doctrine, $page, $nbre): Response
+    {
+        // recuperer la table personne de la bdd
+        $repository = $doctrine ->getRepository(Personne::class);
+        $personnes = $repository ->findBy([], [],$nbre,($page - 1 ) * $nbre);
+        return $this -> render('/personne/index.html.twig', [
+            'personnes' => $personnes
         ]);
     }
 }

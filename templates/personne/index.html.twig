@@ -1,18 +1,20 @@
-{% extends 'template.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Liste de personne{% endblock %}
 
 {% block body %}
-<div class="row"><div class="card" style="width: 18rem;">
-        {% for personne in personnes %}
+
+<div class="row">
+    <h1> Liste des personnes </h1>
+    {% for personne in personnes %}
+        <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <h5 class="card-title">{{ personne.name }}</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">{{ personne.name }} {{ personne.firstname }}</h6>
+            <h5 class="card-title">{{ personne.firstname }}</h5><br>
+            <h6 class="card-subtitle mb-2 text-body-secondary"> Nom & Prenom : {{ personne.name }} {{ personne.firstname }}</h6>
             <p class="card-text">Age : {{ personne.age }}</p>
-            <a href="#" class="card-link">Clic me</a>
-            <a href="#" class="card-link">Or me</a>
+            <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
 {% endblock %}

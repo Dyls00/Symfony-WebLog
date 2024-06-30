@@ -1,12 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-{{ dump(personne)}}
-
-    <div class="alert alert-success" role="alert">
-        {{ personne.firstname }} {{ personne.name }} a {{ personne.age }}
-    </div>
+<h3> Voici les information sur : {{ personne.firstname}}</h3>
+    <div class="card" style="width: 18rem; margin-left: 30px">
+        <div class="card-header">
+            Details
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">ID : {{ personne.id }}</li>
+            <li class="list-group-item">Prenom : {{ personne.firstname }}</li>
+            <li class="list-group-item">Nom : {{ personne.name }}</li>
+            <li class="list-group-item">Age : {{ personne.age }} ans</li>
+        </ul>
+    </div><br>
+    <a href="{{ path('personne_list') }}">
+        <button type="button" class="btn btn-dark" style="width: 10rem; margin-left: 30px">retour</button>
+    </a>
 {%  endblock %}
 
 {% block title %}
