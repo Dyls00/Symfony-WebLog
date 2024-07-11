@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PersonneRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -23,8 +25,17 @@ class Personne
     #[ORM\Column(type: Types::SMALLINT)]
     private ?int $age = null;
 
-    #[ORM\Column(length: 50)]
-    private ?string $job = null;
+
+    /**
+     * @var Collection<int, role>
+     */
+    #[ORM\ManyToMany(targetEntity: role::class)]
+    private Collection $role;
+
+    public function __construct()
+    {
+        $this->role = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -67,14 +78,26 @@ class Personne
         return $this;
     }
 
-    public function getJob(): ?string
+    /**
+     * @return Collection<int, role>
+     */
+    public function getRole(): Collection
     {
-        return $this->job;
+        return $this->role;
     }
 
-    public function setJob(string $job): static
+    public function addRole(role $role): static
     {
-        $this->job = $job;
+        if (!$this->role->contains($role)) {
+            $this->role->add($role);
+        }
+
+        return $this;
+    }
+
+    public function removeRole(role $role): static
+    {
+        $this->role->removeElement($role);
 
         return $this;
     }

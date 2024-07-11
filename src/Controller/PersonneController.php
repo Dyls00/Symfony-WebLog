@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Personne;
+use App\Form\PersonneType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -23,25 +25,15 @@ class PersonneController extends AbstractController
     #[Route('/add', name: 'add_personne')]
     public function addPersonne( ManagerRegistry $doctrine): Response
     {
-        $entityManager = $doctrine->getManager();
-       $personne = new Personne();
-        $personne -> setFirstname('johane');
-        $personne -> setName('dyls');
-        $personne -> setAge(26);
+        $manager = $doctrine -> getManager();
+        $personne = new Personne();
+        // le formulaire est l'image de notre personne
+        $form = $this -> createForm(PersonneType::class, $personne);
+        // supprimer des champs
+        //$form ->remove('nom du champ');
 
-        $personne2 = new Personne();
-        $personne2 -> setFirstname('kieffer');
-        $personne2 -> setName('dyls');
-        $personne2 -> setAge(28);
-
-        // Ajouter l'operation d'insertion de la personne
-        $entityManager -> persist($personne);
-        $entityManager -> persist($personne2);
-
-        // executer l'operation
-        $entityManager -> flush();
-        return $this->render('personne/details.html.twig', [
-            'personne' => $personne,
+        return $this->render('personne/add_personne.html.twig', [
+            'form' => $form->createView()
         ]);
     }
 
@@ -59,13 +51,62 @@ class PersonneController extends AbstractController
         ]);
     }
 
+    // fonction pour effacer une personne
+    #[Route('/delete/{id}', name: 'delete_personne')]
+    public function deletePersonne( ManagerRegistry $doctrine, Personne $personne = null): RedirectResponse
+    {
+    // Recuprer la personne
+
+    if($personne){
+        // si la personne existe
+        $manager = $doctrine -> getManager();
+        // le supprimer et retourner un flash message
+        // ajouter la transaction
+        $manager -> remove($personne);
+        // executer la transaction
+        $manager -> flush();
+        // retourner un message de success
+        $this -> addFlash('success', 'La personne a été supprimer avec succes');
+    } else {
+        //  si non retourner un flash message d'erreur
+        $this -> addFlash('erreur', "La personne n'existe pas");
+    }
+    return $this -> redirectToRoute('personne_list');
+
+    }
+    // fonction pour mettre a jour une personne
+    #[Route('/update/{id}/{name}/{firstname}/{age}', name: 'update_personne')]
+    public function updatePersonne( ManagerRegistry $doctrine, Personne $personne = null, $name, $firstname, $age): RedirectResponse
+    {
+        // Recuprer la personne
+
+        if($personne){
+            // si la personne existe
+            $personne -> setFirstname($firstname);
+            $personne -> setName($name);
+            $personne -> setAge($age);
+            $manager = $doctrine -> getManager();
+            // ajouter la transaction
+            $manager -> persist($personne);
+            // executer la transaction
+            $manager -> flush();
+            // retourner un message de success
+            $this -> addFlash('success', 'La personne a été mis a jour avec succes');
+        } else {
+            //  si non retourner un flash message d'erreur
+            $this -> addFlash('erreur', "La personne n'existe pas");
+        }
+        return $this -> redirectToRoute('personne_list');
+
+    }
+
     // fonction de pagination pour afficher un nombre de personne donné
     #[Route('/all/{page?1}/{nbre?12}', name: 'all_personne')]
     public function all( ManagerRegistry $doctrine, $page, $nbre): Response
     {
         // recuperer la table personne de la bdd
         $repository = $doctrine ->getRepository(Personne::class);
-        $personnes = $repository ->findBy([], [],$nbre,($page - 1 ) * $nbre);
+        $personnes = $repository ->findBy(['age' => 26 ], [],$nbre,($page - 1 ) * $nbre);
         return $this -> render('/personne/index.html.twig', [
             'personnes' => $personnes
         ]);

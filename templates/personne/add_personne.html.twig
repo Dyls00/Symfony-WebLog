@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+<div class="form " style="width: 80%; margin-left: 5%">
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col">{{ form_row(form.firstname) }}</div>
+    </div>
+    <div class="row">
+        <div class="col">{{ form_row(form.name) }}</div>
+    </div>
+    <div class="row">
+        <div class="col">{{ form_row(form.age) }}</div>
+        <div class="col">{{ form_row(form.job)  }}</div>
+    </div>
+    {{ form_rest(form) }}
+</div>
+
+
+{% endblock %}
