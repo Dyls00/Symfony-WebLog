@@ -14,10 +14,15 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/xdebug' => [[['_route' => '_profiler_xdebug', '_controller' => 'web_profiler.controller.profiler::xdebugAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/' => [[['_route' => 'app_dashbord', '_controller' => 'App\\Controller\\DashbordController::index'], null, null, null, false, false, null]],
         '/personne' => [[['_route' => 'personne_list', '_controller' => 'App\\Controller\\PersonneController::index'], null, null, null, true, false, null]],
         '/personne/add' => [[['_route' => 'add_personne', '_controller' => 'App\\Controller\\PersonneController::addPersonne'], null, null, null, false, false, null]],
         '/role/index' => [[['_route' => 'app_role', '_controller' => 'App\\Controller\\RoleController::index'], null, null, null, false, false, null]],
         '/role/add' => [[['_route' => 'add_role', '_controller' => 'App\\Controller\\RoleController::addRole'], null, null, null, false, false, null]],
+        '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
+        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/unite' => [[['_route' => 'app_unite', '_controller' => 'App\\Controller\\UniteController::index'], null, null, null, false, false, null]],
+        '/unite/add' => [[['_route' => 'add_unite', '_controller' => 'App\\Controller\\UniteController::addPersonne'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'

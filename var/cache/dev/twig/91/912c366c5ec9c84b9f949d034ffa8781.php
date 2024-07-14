@@ -70,7 +70,10 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
     <header>
         <nav class=\"navbar navbar-expand-lg bg-body-tertiary\" style=\"height: 80px\">
             <div class=\"container-fluid\">
-                <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+                <a class=\"navbar-brand\" href=\"";
+        // line 19
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dashbord");
+        yield "\">Navbar</a>
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                     <span class=\"navbar-toggler-icon\"></span>
                 </button>
@@ -302,7 +305,7 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  266 => 71,  246 => 12,  235 => 13,  232 => 12,  222 => 11,  211 => 9,  201 => 8,  181 => 5,  167 => 72,  164 => 71,  155 => 68,  152 => 67,  148 => 66,  145 => 65,  136 => 62,  133 => 61,  129 => 60,  126 => 59,  117 => 56,  114 => 55,  110 => 54,  68 => 14,  66 => 11,  63 => 10,  61 => 8,  55 => 5,  49 => 1,);
+        return array (  269 => 71,  249 => 12,  238 => 13,  235 => 12,  225 => 11,  214 => 9,  204 => 8,  184 => 5,  170 => 72,  167 => 71,  158 => 68,  155 => 67,  151 => 66,  148 => 65,  139 => 62,  136 => 61,  132 => 60,  129 => 59,  120 => 56,  117 => 55,  113 => 54,  75 => 19,  68 => 14,  66 => 11,  63 => 10,  61 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -325,7 +328,7 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
     <header>
         <nav class=\"navbar navbar-expand-lg bg-body-tertiary\" style=\"height: 80px\">
             <div class=\"container-fluid\">
-                <a class=\"navbar-brand\" href=\"#\">Navbar</a>
+                <a class=\"navbar-brand\" href=\"{{ path('app_dashbord') }}\">Navbar</a>
                 <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
                     <span class=\"navbar-toggler-icon\"></span>
                 </button>

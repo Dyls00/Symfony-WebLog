@@ -8,13 +8,24 @@
     <div class="row">
         <h1> Liste des roles </h1>
         {% for role in roles %}
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"> Role : {{ role.id }}</h5><br>
-                    <p class="card-text">Libelle : {{ role.libelle }}</p>
-                    {#  <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
-                    <a href="{{ path('delete_personne', {id: personne.id}) }}" class="card-link">Delete</a>#}
-                </div>
+            <div class="table-role">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Role_ID</th>
+                        <th scope="col">Libelle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td></td>
+                        <td>{{ role.id }}</td>
+                        <td>{{ role.libelle }}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         {% endfor %}
     </div>

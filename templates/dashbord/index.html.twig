@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashbord{% endblock %}
+
+{% block body %}
+    <section id="S-body">
+        <div class="sidebar">
+            <div class="t-b">
+                <h3>Tableau de board</h3>
+            </div>
+            <ul class="side-row">
+                <li class="row-item"><a href="#">Liste des users</a></li>
+                <li class="row-item"><a href="#">Liste des zones</a></li>
+                <li class="row-item"><a href="#">Liste des unite</a></li>
+                <li class="row-item"><a href="#">Liste des role</a></li>
+            </ul>
+        </div>
+        <div class="item-block">
+            <div class="head-text">
+                <h1> Welcome to the dashbord</h1>
+            </div>
+            <div class="row-item">
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Users</p>
+                        <p class="text-body">Here are the details of the card</p>
+                    </div>
+                    <a href="{{ path('personne_list') }}"><button class="card-button">Details</button></a>
+                </div>
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Zones</p>
+                        <p class="text-body">Here are the details of the card</p>
+                    </div>
+                    <button class="card-button"><a href="#">Details</a></button>
+                </div>
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Unites</p>
+                        <p class="text-body">Here are the details of the card</p>
+                    </div>
+                    <button class="card-button"><a href="#">Details</a></button>
+                </div>
+                <div class="card">
+                    <div class="card-details">
+                        <p class="text-title">Roles</p>
+                        <p class="text-body">Here are the details of the card</p>
+                    </div>
+                    <a href="{{ path('app_role') }}"><button class="card-button">Details</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -97,26 +97,37 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
         $context['_seq'] = CoreExtension::ensureTraversable((isset($context["roles"]) || array_key_exists("roles", $context) ? $context["roles"] : (function () { throw new RuntimeError('Variable "roles" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
             // line 11
-            yield "            <div class=\"card\" style=\"width: 18rem;\">
-                <div class=\"card-body\">
-                    <h5 class=\"card-title\"> Role : ";
-            // line 13
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 13), "html", null, true);
-            yield "</h5><br>
-                    <p class=\"card-text\">Libelle : ";
-            // line 14
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "libelle", [], "any", false, false, false, 14), "html", null, true);
-            yield "</p>
-                    ";
-            // line 17
-            yield "                </div>
+            yield "            <div class=\"table-role\">
+                <table class=\"table table-striped\">
+                    <thead>
+                    <tr>
+                        <th scope=\"col\">#</th>
+                        <th scope=\"col\">Role_ID</th>
+                        <th scope=\"col\">Libelle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope=\"row\">1</th>
+                        <td></td>
+                        <td>";
+            // line 24
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 24), "html", null, true);
+            yield "</td>
+                        <td>";
+            // line 25
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "libelle", [], "any", false, false, false, 25), "html", null, true);
+            yield "</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 31
         yield "    </div>
 ";
         
@@ -149,7 +160,7 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  120 => 20,  112 => 17,  108 => 14,  104 => 13,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  131 => 31,  119 => 25,  115 => 24,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -164,13 +175,24 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
     <div class=\"row\">
         <h1> Liste des roles </h1>
         {% for role in roles %}
-            <div class=\"card\" style=\"width: 18rem;\">
-                <div class=\"card-body\">
-                    <h5 class=\"card-title\"> Role : {{ role.id }}</h5><br>
-                    <p class=\"card-text\">Libelle : {{ role.libelle }}</p>
-                    {#  <a href=\"{{ path('detail_personne', {id: personne.id}) }}\" class=\"card-link\">Details</a>
-                    <a href=\"{{ path('delete_personne', {id: personne.id}) }}\" class=\"card-link\">Delete</a>#}
-                </div>
+            <div class=\"table-role\">
+                <table class=\"table table-striped\">
+                    <thead>
+                    <tr>
+                        <th scope=\"col\">#</th>
+                        <th scope=\"col\">Role_ID</th>
+                        <th scope=\"col\">Libelle</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope=\"row\">1</th>
+                        <td></td>
+                        <td>{{ role.id }}</td>
+                        <td>{{ role.libelle }}</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         {% endfor %}
     </div>

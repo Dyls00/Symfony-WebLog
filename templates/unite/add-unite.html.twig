@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block body %}
+    <div class="form " style="width: 80%; margin-left: 5%">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col">{{ form_row(form.libelle) }}</div>
+        </div>
+        <div class="row">
+            <div class="col">{{ form_row(form.id_unite_parent) }}</div>
+        </div>
+        {{ form_rest(form) }}
+    </div>
+
+
+{% endblock %}

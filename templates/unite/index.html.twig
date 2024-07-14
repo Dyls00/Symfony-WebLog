@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de personne{% endblock %}
+
+{% block body %}
+
+    <div class="row">
+        <h1> Liste des unites </h1>
+        {% for unite in unites %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ unite.libelle }}</h5><br>
+                    {#  <h6 class="card-subtitle mb-2 text-body-secondary">{{ unite.id_unite_parent }}</h6>#}
+                    <a href="{{ path('detail_personne', {id: unite.id}) }}" class="card-link">Details</a>
+                    <a href="{{ path('delete_personne', {id: unite.id}) }}" class="card-link">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

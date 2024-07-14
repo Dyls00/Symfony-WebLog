@@ -70,10 +70,10 @@ class __TwigTemplate_6c5d67f4f254263f749a3bb6d1f7ddb8 extends Template
         yield "<h3> Voici les information sur : ";
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["personne"]) || array_key_exists("personne", $context) ? $context["personne"] : (function () { throw new RuntimeError('Variable "personne" does not exist.', 4, $this->source); })()), "firstname", [], "any", false, false, false, 4), "html", null, true);
         yield "</h3>
+    <div class=\"card-header\">
+        Details
+    </div>
     <div class=\"card\" style=\"width: 18rem; margin-left: 30px\">
-        <div class=\"card-header\">
-            Details
-        </div>
         <ul class=\"list-group list-group-flush\">
             <li class=\"list-group-item\">ID : ";
         // line 10
@@ -161,10 +161,10 @@ class __TwigTemplate_6c5d67f4f254263f749a3bb6d1f7ddb8 extends Template
 
 {% block body %}
 <h3> Voici les information sur : {{ personne.firstname}}</h3>
+    <div class=\"card-header\">
+        Details
+    </div>
     <div class=\"card\" style=\"width: 18rem; margin-left: 30px\">
-        <div class=\"card-header\">
-            Details
-        </div>
         <ul class=\"list-group list-group-flush\">
             <li class=\"list-group-item\">ID : {{ personne.id }}</li>
             <li class=\"list-group-item\">Prenom : {{ personne.firstname }}</li>
