@@ -5,9 +5,8 @@
 {% block body %}
 
 
-    <div class="row">
+    <div class="row-role">
         <h1> Liste des roles </h1>
-        {% for role in roles %}
             <div class="table-role">
                 <table class="table table-striped">
                     <thead>
@@ -18,15 +17,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td></td>
-                        <td>{{ role.id }}</td>
-                        <td>{{ role.libelle }}</td>
-                    </tr>
+                        {% for role in roles %}
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>{{ role.id }}</td>
+                                <td>{{ role.libelle }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
-        {% endfor %}
     </div>
 {% endblock %}

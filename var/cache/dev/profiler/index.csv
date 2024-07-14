@@ -460,3 +460,8 @@ eef25c,127.0.0.1,GET,http://127.0.0.1:8000/unite/add,1720985958,,200,request
 3ac593,127.0.0.1,GET,http://127.0.0.1:8000/unite,1720985961,,200,request
 9e3ece,127.0.0.1,GET,http://127.0.0.1:8000/personne/2,1720985966,,302,request
 28d730,127.0.0.1,GET,http://127.0.0.1:8000/personne/,1720985967,,200,request
+7c62eb,127.0.0.1,GET,http://127.0.0.1:8000/role,1720986354,744e9f,404,request
+744e9f,127.0.0.1,GET,http://127.0.0.1:8000/role,1720986354,,404,request
+43679d,127.0.0.1,GET,http://127.0.0.1:8000/role/index,1720986407,,200,request
+a88cd7,127.0.0.1,GET,http://127.0.0.1:8000/role/index,1720986606,,200,request
+19878d,127.0.0.1,GET,http://127.0.0.1:8000/role/index,1720986648,,200,request

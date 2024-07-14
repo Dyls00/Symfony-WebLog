@@ -2,7 +2,9 @@ body {
     background-color: skyblue;
 }
 /* body */
-
+.row-role{
+    width: 50%;
+}
 #S-body{
     display: flex;
     flex-direction: row;

@@ -89,15 +89,9 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
         // line 6
         yield "
 
-    <div class=\"row\">
+    <div class=\"row-role\">
         <h1> Liste des roles </h1>
-        ";
-        // line 10
-        $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["roles"]) || array_key_exists("roles", $context) ? $context["roles"] : (function () { throw new RuntimeError('Variable "roles" does not exist.', 10, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
-            // line 11
-            yield "            <div class=\"table-role\">
+            <div class=\"table-role\">
                 <table class=\"table table-striped\">
                     <thead>
                     <tr>
@@ -107,28 +101,33 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope=\"row\">1</th>
-                        <td></td>
-                        <td>";
+                        ";
+        // line 20
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["roles"]) || array_key_exists("roles", $context) ? $context["roles"] : (function () { throw new RuntimeError('Variable "roles" does not exist.', 20, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["role"]) {
+            // line 21
+            yield "                            <tr>
+                                <th scope=\"row\">1</th>
+                                <td>";
+            // line 23
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 23), "html", null, true);
+            yield "</td>
+                                <td>";
             // line 24
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "id", [], "any", false, false, false, 24), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "libelle", [], "any", false, false, false, 24), "html", null, true);
             yield "</td>
-                        <td>";
-            // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "libelle", [], "any", false, false, false, 25), "html", null, true);
-            yield "</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        ";
+                            </tr>
+                        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['role'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 31
-        yield "    </div>
+        // line 27
+        yield "                    </tbody>
+                </table>
+            </div>
+    </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -160,7 +159,7 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  131 => 31,  119 => 25,  115 => 24,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  127 => 27,  118 => 24,  114 => 23,  110 => 21,  106 => 20,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -172,9 +171,8 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
 {% block body %}
 
 
-    <div class=\"row\">
+    <div class=\"row-role\">
         <h1> Liste des roles </h1>
-        {% for role in roles %}
             <div class=\"table-role\">
                 <table class=\"table table-striped\">
                     <thead>
@@ -185,16 +183,16 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope=\"row\">1</th>
-                        <td></td>
-                        <td>{{ role.id }}</td>
-                        <td>{{ role.libelle }}</td>
-                    </tr>
+                        {% for role in roles %}
+                            <tr>
+                                <th scope=\"row\">1</th>
+                                <td>{{ role.id }}</td>
+                                <td>{{ role.libelle }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
-        {% endfor %}
     </div>
 {% endblock %}
 ", "role/index.html.twig", "C:\\Users\\user\\PhpstormProjects\\Symfony-WebLog\\templates\\role\\index.html.twig");
