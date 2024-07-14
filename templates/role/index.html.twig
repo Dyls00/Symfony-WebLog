@@ -12,8 +12,8 @@
                 <div class="card-body">
                     <h5 class="card-title"> Role : {{ role.id }}</h5><br>
                     <p class="card-text">Libelle : {{ role.libelle }}</p>
-                    <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
-                    <a href="{{ path('delete_personne', {id: personne.id}) }}" class="card-link">Delete</a>
+                    {#  <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
+                    <a href="{{ path('delete_personne', {id: personne.id}) }}" class="card-link">Delete</a>#}
                 </div>
             </div>
         {% endfor %}

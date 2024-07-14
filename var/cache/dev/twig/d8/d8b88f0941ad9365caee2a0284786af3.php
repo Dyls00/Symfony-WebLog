@@ -91,10 +91,13 @@ class __TwigTemplate_6c5d67f4f254263f749a3bb6d1f7ddb8 extends Template
         // line 13
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["personne"]) || array_key_exists("personne", $context) ? $context["personne"] : (function () { throw new RuntimeError('Variable "personne" does not exist.', 13, $this->source); })()), "age", [], "any", false, false, false, 13), "html", null, true);
         yield " ans</li>
+            <!--li class=\"list-group-item\">Age : ";
+        // line 14
+        yield " ans</li-->
         </ul>
     </div><br>
     <a href=\"";
-        // line 16
+        // line 17
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("personne_list");
         yield "\">
         <button type=\"button\" class=\"btn btn-dark\" style=\"width: 10rem; margin-left: 30px\">retour</button>
@@ -109,7 +112,7 @@ class __TwigTemplate_6c5d67f4f254263f749a3bb6d1f7ddb8 extends Template
         return; yield '';
     }
 
-    // line 21
+    // line 22
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -149,7 +152,7 @@ class __TwigTemplate_6c5d67f4f254263f749a3bb6d1f7ddb8 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  113 => 21,  98 => 16,  92 => 13,  88 => 12,  84 => 11,  80 => 10,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  116 => 22,  101 => 17,  96 => 14,  92 => 13,  88 => 12,  84 => 11,  80 => 10,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -167,6 +170,7 @@ class __TwigTemplate_6c5d67f4f254263f749a3bb6d1f7ddb8 extends Template
             <li class=\"list-group-item\">Prenom : {{ personne.firstname }}</li>
             <li class=\"list-group-item\">Nom : {{ personne.name }}</li>
             <li class=\"list-group-item\">Age : {{ personne.age }} ans</li>
+            <!--li class=\"list-group-item\">Age : {# { personne.role }#} ans</li-->
         </ul>
     </div><br>
     <a href=\"{{ path('personne_list') }}\">

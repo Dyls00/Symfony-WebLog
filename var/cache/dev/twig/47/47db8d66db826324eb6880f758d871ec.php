@@ -113,7 +113,7 @@ class __TwigTemplate_82ecba9785ecf697f2a8075ca64b6646 extends Template
         yield "</div>
         <div class=\"col\">";
         // line 18
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "job", [], "any", false, false, false, 18), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "role", [], "any", false, false, false, 18), 'row');
         yield "</div>
     </div>
     ";
@@ -176,7 +176,7 @@ class __TwigTemplate_82ecba9785ecf697f2a8075ca64b6646 extends Template
     </div>
     <div class=\"row\">
         <div class=\"col\">{{ form_row(form.age) }}</div>
-        <div class=\"col\">{{ form_row(form.job)  }}</div>
+        <div class=\"col\">{{ form_row(form.role)  }}</div>
     </div>
     {{ form_rest(form) }}
 </div>

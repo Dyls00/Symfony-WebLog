@@ -27,10 +27,13 @@ class Personne
 
 
     /**
-     * @var Collection<int, role>
+     * @var Collection<int, Role>
      */
-    #[ORM\ManyToMany(targetEntity: role::class)]
+    #[ORM\ManyToMany(targetEntity: Role::class)]
     private Collection $role;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $password = null;
 
     public function __construct()
     {
@@ -98,6 +101,22 @@ class Personne
     public function removeRole(role $role): static
     {
         $this->role->removeElement($role);
+
+        return $this;
+    }
+    public function __toString(): string
+    {
+        return $this -> designation;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(?string $password): static
+    {
+        $this->password = $password;
 
         return $this;
     }

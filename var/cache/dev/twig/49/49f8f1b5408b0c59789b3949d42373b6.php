@@ -107,15 +107,9 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
             // line 14
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["role"], "libelle", [], "any", false, false, false, 14), "html", null, true);
             yield "</p>
-                    <a href=\"";
-            // line 15
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("detail_personne", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["personne"]) || array_key_exists("personne", $context) ? $context["personne"] : (function () { throw new RuntimeError('Variable "personne" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15)]), "html", null, true);
-            yield "\" class=\"card-link\">Details</a>
-                    <a href=\"";
-            // line 16
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_personne", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["personne"]) || array_key_exists("personne", $context) ? $context["personne"] : (function () { throw new RuntimeError('Variable "personne" does not exist.', 16, $this->source); })()), "id", [], "any", false, false, false, 16)]), "html", null, true);
-            yield "\" class=\"card-link\">Delete</a>
-                </div>
+                    ";
+            // line 17
+            yield "                </div>
             </div>
         ";
         }
@@ -155,7 +149,7 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
      */
     public function getDebugInfo()
     {
-        return array (  126 => 20,  116 => 16,  112 => 15,  108 => 14,  104 => 13,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  120 => 20,  112 => 17,  108 => 14,  104 => 13,  100 => 11,  96 => 10,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -174,8 +168,8 @@ class __TwigTemplate_209ffa4ff5b397bbb8ae6c96a6ca053a extends Template
                 <div class=\"card-body\">
                     <h5 class=\"card-title\"> Role : {{ role.id }}</h5><br>
                     <p class=\"card-text\">Libelle : {{ role.libelle }}</p>
-                    <a href=\"{{ path('detail_personne', {id: personne.id}) }}\" class=\"card-link\">Details</a>
-                    <a href=\"{{ path('delete_personne', {id: personne.id}) }}\" class=\"card-link\">Delete</a>
+                    {#  <a href=\"{{ path('detail_personne', {id: personne.id}) }}\" class=\"card-link\">Details</a>
+                    <a href=\"{{ path('delete_personne', {id: personne.id}) }}\" class=\"card-link\">Delete</a>#}
                 </div>
             </div>
         {% endfor %}
