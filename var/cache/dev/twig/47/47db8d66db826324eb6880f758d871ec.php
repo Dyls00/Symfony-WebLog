@@ -89,36 +89,37 @@ class __TwigTemplate_82ecba9785ecf697f2a8075ca64b6646 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 8
-        yield "<div class=\"form \" style=\"width: 80%; margin-left: 5%\">
+        yield "    <link rel=\"stylesheet\" href=\"../node_modules/bootstrap/dist/css/bootstrap.css\">
+<div class=\"form \" style=\"width: 80%; margin-left: 5%\">
     ";
-        // line 9
-        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 9, $this->source); })()), 'form_start');
+        // line 10
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 10, $this->source); })()), 'form_start');
         yield "
     <div class=\"row\">
         <div class=\"col\">";
-        // line 11
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 11, $this->source); })()), "firstname", [], "any", false, false, false, 11), 'row');
+        // line 12
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "firstname", [], "any", false, false, false, 12), 'row');
         yield "</div>
     </div>
     <div class=\"row\">
         <div class=\"col\">";
-        // line 14
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 14, $this->source); })()), "name", [], "any", false, false, false, 14), 'row');
+        // line 15
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "name", [], "any", false, false, false, 15), 'row');
         yield "</div>
     </div>
     <div class=\"row\">
-        <div class=\"col\">";
-        // line 17
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), "age", [], "any", false, false, false, 17), 'row');
-        yield "</div>
         <div class=\"col\">";
         // line 18
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "role", [], "any", false, false, false, 18), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), "age", [], "any", false, false, false, 18), 'row');
+        yield "</div>
+        <div class=\"col\">";
+        // line 19
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 19, $this->source); })()), "role", [], "any", false, false, false, 19), 'row');
         yield "</div>
     </div>
     ";
-        // line 20
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 20, $this->source); })()), 'rest');
+        // line 21
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 21, $this->source); })()), 'rest');
         yield "
 </div>
 
@@ -154,7 +155,7 @@ class __TwigTemplate_82ecba9785ecf697f2a8075ca64b6646 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  121 => 20,  116 => 18,  112 => 17,  106 => 14,  100 => 11,  95 => 9,  92 => 8,  82 => 7,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  122 => 21,  117 => 19,  113 => 18,  107 => 15,  101 => 12,  96 => 10,  92 => 8,  82 => 7,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -166,6 +167,7 @@ class __TwigTemplate_82ecba9785ecf697f2a8075ca64b6646 extends Template
 {% endblock %}
 
 {% block body %}
+    <link rel=\"stylesheet\" href=\"../node_modules/bootstrap/dist/css/bootstrap.css\">
 <div class=\"form \" style=\"width: 80%; margin-left: 5%\">
     {{ form_start(form) }}
     <div class=\"row\">

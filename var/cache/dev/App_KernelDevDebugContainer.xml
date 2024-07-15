@@ -465,7 +465,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
       <tag priority="-50" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">controller.argument_value_resolver</tag>
-      <argument type="service" id=".service_locator.4UYm1N2"/>
+      <argument type="service" id=".service_locator.US84x.K"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">
       <tag priority="-100" name="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver">controller.argument_value_resolver</tag>
@@ -3389,7 +3389,7 @@
     </service>
     <service id="argument_resolver.not_tagged_controller" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
       <tag name="controller.argument_value_resolver" priority="-200"/>
-      <argument type="service" id=".service_locator.4UYm1N2"/>
+      <argument type="service" id=".service_locator.US84x.K"/>
     </service>
     <service id="debug.log_processor" class="Symfony\Bridge\Monolog\Processor\DebugProcessor">
       <tag name="kernel.reset" method="reset"/>
@@ -8058,12 +8058,6 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.VJk.HBp" method="withContext"/>
     </service>
-    <service id=".service_locator.jtEnr.g.App\Controller\PersonneController::all()" class="Symfony\Component\DependencyInjection\ServiceLocator">
-      <tag name="container.service_locator_context" id="App\Controller\PersonneController::all()"/>
-      <argument>App\Controller\PersonneController::all()</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.jtEnr.g" method="withContext"/>
-    </service>
     <service id=".service_locator.Ur9f.YA" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -8106,11 +8100,10 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.jtEnr.g" method="withContext"/>
     </service>
-    <service id=".service_locator.4UYm1N2" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.US84x.K" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\PersonneController::addPersonne" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::addPersonne()"/>
-        <argument key="App\Controller\PersonneController::all" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::all()"/>
         <argument key="App\Controller\PersonneController::deletePersonne" type="service_closure" id=".service_locator.VJk.HBp.App\Controller\PersonneController::deletePersonne()"/>
         <argument key="App\Controller\PersonneController::detail" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::detail()"/>
         <argument key="App\Controller\PersonneController::index" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::index()"/>
@@ -8125,7 +8118,6 @@
         <argument key="kernel::loadRoutes" type="service_closure" id=".service_locator.4wc4Ag1.kernel::loadRoutes()"/>
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.4wc4Ag1.kernel::registerContainerConfiguration()"/>
         <argument key="App\Controller\PersonneController:addPersonne" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::addPersonne()"/>
-        <argument key="App\Controller\PersonneController:all" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::all()"/>
         <argument key="App\Controller\PersonneController:deletePersonne" type="service_closure" id=".service_locator.VJk.HBp.App\Controller\PersonneController::deletePersonne()"/>
         <argument key="App\Controller\PersonneController:detail" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::detail()"/>
         <argument key="App\Controller\PersonneController:index" type="service_closure" id=".service_locator.jtEnr.g.App\Controller\PersonneController::index()"/>
@@ -10305,7 +10297,7 @@
     <service id="Symfony\Component\Mercure\PublisherInterface" alias="mercure.hub.default.publisher.traceable"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.1W6W_dF" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.4UYm1N2"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.US84x.K"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.BxSdgVt"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>

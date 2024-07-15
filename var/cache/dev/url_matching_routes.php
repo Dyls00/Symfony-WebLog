@@ -47,8 +47,7 @@ return [
                 .'|/personne/(?'
                     .'|(\\d+)(*:220)'
                     .'|delete/([^/]++)(*:243)'
-                    .'|update/([^/]++)/([^/]++)/([^/]++)/([^/]++)(*:293)'
-                    .'|all(?:/([^/]++)(?:/([^/]++))?)?(*:332)'
+                    .'|update(?:/([^/]++))?(*:271)'
                 .')'
             .')/?$}sDu',
     ],
@@ -63,9 +62,8 @@ return [
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         220 => [[['_route' => 'detail_personne', '_controller' => 'App\\Controller\\PersonneController::detail'], ['id'], null, null, false, true, null]],
         243 => [[['_route' => 'delete_personne', '_controller' => 'App\\Controller\\PersonneController::deletePersonne'], ['id'], null, null, false, true, null]],
-        293 => [[['_route' => 'update_personne', '_controller' => 'App\\Controller\\PersonneController::updatePersonne'], ['id', 'name', 'firstname', 'age'], null, null, false, true, null]],
-        332 => [
-            [['_route' => 'all_personne', 'page' => '1', 'nbre' => '12', '_controller' => 'App\\Controller\\PersonneController::all'], ['page', 'nbre'], null, null, false, true, null],
+        271 => [
+            [['_route' => 'update_personne', 'id' => '0', '_controller' => 'App\\Controller\\PersonneController::updatePersonne'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

@@ -126,7 +126,10 @@ class __TwigTemplate_bdc307c0f8298c36c4b29453768ffef1 extends Template
                         <p class=\"text-title\">Unites</p>
                         <p class=\"text-body\">Here are the details of the card</p>
                     </div>
-                    <button class=\"card-button\"><a href=\"#\">Details</a></button>
+                    <button class=\"card-button\"><a href=\"";
+        // line 42
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_unite");
+        yield "\">Details</a></button>
                 </div>
                 <div class=\"card\">
                     <div class=\"card-details\">
@@ -172,7 +175,7 @@ class __TwigTemplate_bdc307c0f8298c36c4b29453768ffef1 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  138 => 49,  114 => 28,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  141 => 49,  131 => 42,  114 => 28,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -218,7 +221,7 @@ class __TwigTemplate_bdc307c0f8298c36c4b29453768ffef1 extends Template
                         <p class=\"text-title\">Unites</p>
                         <p class=\"text-body\">Here are the details of the card</p>
                     </div>
-                    <button class=\"card-button\"><a href=\"#\">Details</a></button>
+                    <button class=\"card-button\"><a href=\"{{ path('app_unite') }}\">Details</a></button>
                 </div>
                 <div class=\"card\">
                     <div class=\"card-details\">

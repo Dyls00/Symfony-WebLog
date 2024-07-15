@@ -74,7 +74,7 @@ class PersonneController extends AbstractController
 
     // fonction pour effacer une personne
     #[Route('/delete/{id}', name: 'delete_personne')]
-    public function deletePersonne( ManagerRegistry $doctrine, Personne $personne = null): RedirectResponse
+    public function deletePersonne( ManagerRegistry $doctrine, Personne $personne = null):Response
     {
     // Recuprer la personne
 
@@ -96,33 +96,51 @@ class PersonneController extends AbstractController
 
     }
     // fonction pour mettre a jour une personne
-    #[Route('/update/{id}/{name}/{firstname}/{age}', name: 'update_personne')]
-    public function updatePersonne( ManagerRegistry $doctrine, Personne $personne = null, $name, $firstname, $age): RedirectResponse
+    #[Route('/update/{id?0}', name: 'update_personne')]
+    public function updatePersonne( ManagerRegistry $doctrine, Personne $personne = null, Request $request): Response
     {
-        // Recuprer la personne
-
-        if($personne){
-            // si la personne existe
-            $personne -> setFirstname($firstname);
-            $personne -> setName($name);
-            $personne -> setAge($age);
-            $manager = $doctrine -> getManager();
-            // ajouter la transaction
-            $manager -> persist($personne);
-            // executer la transaction
-            $manager -> flush();
-            // retourner un message de success
-            $this -> addFlash('success', 'La personne a été mis a jour avec succes');
+        // si la personne n'existe pas
+        if(!$personne){
+            $personne = new Personne();
         } else {
-            //  si non retourner un flash message d'erreur
-            $this -> addFlash('erreur', "La personne n'existe pas");
+            // si non
+            // recuperer
+
+            $manager = $doctrine -> getManager();
+            // l'objet $personne est l'image de notre formulaire
+            $form = $this -> createForm(PersonneType::class, $personne);
+            // supprimer des champs
+            //$form ->remove('nom du champ');
+
+            // Le formulaire va traiter la requete
+            $form -> handleRequest($request);
+
+            // verifier si la requete a ete soumis
+            if($form -> isSubmitted() /*&& $form -> isValid()*/){
+                $manager = $doctrine -> getManager();
+                // si oui
+                //traiter le formulaire
+                $manager -> persist($personne);
+                //pousser vers la bdd
+                $manager -> flush();
+                // afficher un message de succes
+                $this -> addFlash('success', "La personne a été ajouter avec success");
+                // rediriger vers la liste de personne
+                return $this->redirectToRoute('personne_list');
+            }else {
+                // si non
+                // afficher le formulaire
+
+                return $this->render('personne/add_personne.html.twig', [
+                    'form' => $form->createView()
+                ]);
+            }
         }
-        return $this -> redirectToRoute('personne_list');
 
     }
 
     // fonction de pagination pour afficher un nombre de personne donné
-    #[Route('/all/{page?1}/{nbre?12}', name: 'all_personne')]
+   /* #[Route('/all/{page?1}/{nbre?12}', name: 'all_personne')]
     public function all( ManagerRegistry $doctrine, $page, $nbre): Response
     {
         // recuperer la table personne de la bdd
@@ -131,5 +149,5 @@ class PersonneController extends AbstractController
         return $this -> render('/personne/index.html.twig', [
             'personnes' => $personnes
         ]);
-    }
+    }*/
 }
