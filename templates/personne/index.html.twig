@@ -8,14 +8,35 @@
     <h1> Liste des personnes </h1>
     {% for personne in personnes %}
         <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h5 class="card-title">{{ personne.firstname }}</h5><br>
-            <h6 class="card-subtitle mb-2 text-body-secondary"> Nom & Prenom : {{ personne.name }} {{ personne.firstname }}</h6>
-            <p class="card-text">Age : {{ personne.age }}</p>
-            <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
-            <a href="{{ path('delete_personne', {id: personne.id}) }}" class="card-link">Delete</a>
+            <div class="card-body">
+                <h5 class="card-title">{{ personne.firstname }}</h5><br>
+                <h6 class="card-subtitle mb-2 text-body-secondary"> Nom & Prenom : {{ personne.name }} {{ personne.firstname }}</h6>
+                <p class="card-text">Age : {{ personne.age }}</p>
+                <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
+                <a href="{{ path('delete_personne', {id: personne.id}) }}" class="card-link">Delete</a>
+            </div>
         </div>
-    </div>
     {% endfor %}
+    {% if isPaginated %}
+    <div class="page">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                {% if page != 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('all_personne', {page: page - 1, nbre: nbre }) }}" tabindex="-1">Précedent</a>
+                </li>
+                {% endif %}
+                {% for i in range(1, nbrePage) %}
+                <li class="page-item"><a class="page-link" href="{{ path('all_personne', {page: i , nbre: nbre }) }}">{{ i }}</a></li>
+                {% endfor %}
+                {% if page != nbrePage %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('all_personne', {page: page + 1, nbre: nbre }) }}">Suivant</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
 </div>
 {% endblock %}

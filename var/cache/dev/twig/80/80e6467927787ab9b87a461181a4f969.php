@@ -93,7 +93,10 @@ class __TwigTemplate_bdc307c0f8298c36c4b29453768ffef1 extends Template
                 <h3>Tableau de board</h3>
             </div>
             <ul class=\"side-row\">
-                <li class=\"row-item\"><a href=\"#\">Liste des users</a></li>
+                <li class=\"row-item\"><a href=\"";
+        // line 12
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne");
+        yield "\">Liste des users</a></li>
                 <li class=\"row-item\"><a href=\"#\">Liste des zones</a></li>
                 <li class=\"row-item\"><a href=\"#\">Liste des unite</a></li>
                 <li class=\"row-item\"><a href=\"#\">Liste des role</a></li>
@@ -175,7 +178,7 @@ class __TwigTemplate_bdc307c0f8298c36c4b29453768ffef1 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  141 => 49,  131 => 42,  114 => 28,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  144 => 49,  134 => 42,  117 => 28,  98 => 12,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -191,7 +194,7 @@ class __TwigTemplate_bdc307c0f8298c36c4b29453768ffef1 extends Template
                 <h3>Tableau de board</h3>
             </div>
             <ul class=\"side-row\">
-                <li class=\"row-item\"><a href=\"#\">Liste des users</a></li>
+                <li class=\"row-item\"><a href=\"{{ path('all_personne') }}\">Liste des users</a></li>
                 <li class=\"row-item\"><a href=\"#\">Liste des zones</a></li>
                 <li class=\"row-item\"><a href=\"#\">Liste des unite</a></li>
                 <li class=\"row-item\"><a href=\"#\">Liste des role</a></li>

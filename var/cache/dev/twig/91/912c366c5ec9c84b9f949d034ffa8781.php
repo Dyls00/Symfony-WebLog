@@ -106,17 +106,27 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
                     </form>
                 </div>
             </div>
+            <div class=\"dropdown\">
+                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Dropdown button
+                </button>
+                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                    <a class=\"dropdown-item\" href=\"#\">Action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Another action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>
+                </div>
+            </div>
         </nav>
     </header>
     ";
-        // line 54
+        // line 64
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "session", [], "any", false, false, false, 54), "flashbag", [], "any", false, false, false, 54), "get", ["info"], "method", false, false, false, 54));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 64, $this->source); })()), "session", [], "any", false, false, false, 64), "flashbag", [], "any", false, false, false, 64), "get", ["info"], "method", false, false, false, 64));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 55
+            // line 65
             yield "        <div class=\"alert alert-info\">
             ";
-            // line 56
+            // line 66
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "
         </div>
@@ -125,17 +135,17 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 59
+        // line 69
         yield "
     ";
-        // line 60
+        // line 70
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 60, $this->source); })()), "session", [], "any", false, false, false, 60), "flashbag", [], "any", false, false, false, 60), "get", ["success"], "method", false, false, false, 60));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 70, $this->source); })()), "session", [], "any", false, false, false, 70), "flashbag", [], "any", false, false, false, 70), "get", ["success"], "method", false, false, false, 70));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 61
+            // line 71
             yield "        <div class=\"alert alert-success\">
             ";
-            // line 62
+            // line 72
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "
         </div>
@@ -144,17 +154,17 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 65
+        // line 75
         yield "
     ";
-        // line 66
+        // line 76
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 66, $this->source); })()), "session", [], "any", false, false, false, 66), "flashbag", [], "any", false, false, false, 66), "get", ["erreur"], "method", false, false, false, 66));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 76, $this->source); })()), "session", [], "any", false, false, false, 76), "flashbag", [], "any", false, false, false, 76), "get", ["erreur"], "method", false, false, false, 76));
         foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-            // line 67
+            // line 77
             yield "        <div class=\"alert alert-danger\" role=\"alert\">
             ";
-            // line 68
+            // line 78
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
             yield "
         </div>
@@ -163,10 +173,10 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 71
+        // line 81
         yield "        ";
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 72
+        // line 82
         yield "    <h2>fin</h2>
     </body>
 </html>
@@ -265,7 +275,7 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
         return; yield '';
     }
 
-    // line 71
+    // line 81
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -305,7 +315,7 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  269 => 71,  249 => 12,  238 => 13,  235 => 12,  225 => 11,  214 => 9,  204 => 8,  184 => 5,  170 => 72,  167 => 71,  158 => 68,  155 => 67,  151 => 66,  148 => 65,  139 => 62,  136 => 61,  132 => 60,  129 => 59,  120 => 56,  117 => 55,  113 => 54,  75 => 19,  68 => 14,  66 => 11,  63 => 10,  61 => 8,  55 => 5,  49 => 1,);
+        return array (  279 => 81,  259 => 12,  248 => 13,  245 => 12,  235 => 11,  224 => 9,  214 => 8,  194 => 5,  180 => 82,  177 => 81,  168 => 78,  165 => 77,  161 => 76,  158 => 75,  149 => 72,  146 => 71,  142 => 70,  139 => 69,  130 => 66,  127 => 65,  123 => 64,  75 => 19,  68 => 14,  66 => 11,  63 => 10,  61 => 8,  55 => 5,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -359,6 +369,16 @@ class __TwigTemplate_b9c4df65324a41f490906ee92303c535 extends Template
                         <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">
                         <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>
                     </form>
+                </div>
+            </div>
+            <div class=\"dropdown\">
+                <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                    Dropdown button
+                </button>
+                <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">
+                    <a class=\"dropdown-item\" href=\"#\">Action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Another action</a>
+                    <a class=\"dropdown-item\" href=\"#\">Something else here</a>
                 </div>
             </div>
         </nav>

@@ -140,14 +140,20 @@ class PersonneController extends AbstractController
     }
 
     // fonction de pagination pour afficher un nombre de personne donné
-   /* #[Route('/all/{page?1}/{nbre?12}', name: 'all_personne')]
+   #[Route('/all/{page?1}/{nbre?5}', name: 'all_personne')]
     public function all( ManagerRegistry $doctrine, $page, $nbre): Response
     {
         // recuperer la table personne de la bdd
         $repository = $doctrine ->getRepository(Personne::class);
-        $personnes = $repository ->findBy(['age' => 26 ], [],$nbre,($page - 1 ) * $nbre);
+        $nbPersonne = $repository->count([]);
+        $nbrePage = ceil($nbPersonne / $nbre);
+        $personnes = $repository ->findBy([], [],$nbre,($page - 1 ) * $nbre);
         return $this -> render('/personne/index.html.twig', [
-            'personnes' => $personnes
+            'personnes' => $personnes,
+            'isPaginated' => true,
+            'nbrePage' => $nbrePage,
+            'page' => $page,
+            'nbre' => $nbre,
         ]);
-    }*/
+    }
 }

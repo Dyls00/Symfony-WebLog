@@ -20,6 +20,7 @@ class PersonneType extends AbstractType
             ->add('age')
             ->add('role', EntityType::class, [
                 'class' => role::class,
+                'placeholder' => 'Choisir...',
                 'choice_label' => 'libelle',
                 'multiple' => true,
             ])
