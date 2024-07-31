@@ -90,70 +90,72 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
         yield "
 <div class=\"row\">
     <h1> Liste des personnes </h1>
-    ";
-        // line 9
+        <table class=\"table\">
+            <thead>
+            <tr>
+                <th scope=\"col\">#</th>
+                <th scope=\"col\">PRENOM</th>
+                <th scope=\"col\">NOM</th>
+                <th scope=\"col\">AGE</th>
+            </tr>
+            </thead>
+            <tbody>
+            ";
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["personnes"]) || array_key_exists("personnes", $context) ? $context["personnes"] : (function () { throw new RuntimeError('Variable "personnes" does not exist.', 9, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["personnes"]) || array_key_exists("personnes", $context) ? $context["personnes"] : (function () { throw new RuntimeError('Variable "personnes" does not exist.', 19, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["personne"]) {
-            // line 10
-            yield "        <div class=\"card\" style=\"width: 18rem;\">
-            <div class=\"card-body\">
-                <h5 class=\"card-title\">";
-            // line 12
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "firstname", [], "any", false, false, false, 12), "html", null, true);
-            yield "</h5><br>
-                <h6 class=\"card-subtitle mb-2 text-body-secondary\"> Nom & Prenom : ";
-            // line 13
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "name", [], "any", false, false, false, 13), "html", null, true);
-            yield " ";
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "firstname", [], "any", false, false, false, 13), "html", null, true);
-            yield "</h6>
-                <p class=\"card-text\">Age : ";
-            // line 14
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "age", [], "any", false, false, false, 14), "html", null, true);
-            yield "</p>
-                <a href=\"";
-            // line 15
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("detail_personne", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "id", [], "any", false, false, false, 15)]), "html", null, true);
-            yield "\" class=\"card-link\">Details</a>
-                <a href=\"";
-            // line 16
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("delete_personne", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "id", [], "any", false, false, false, 16)]), "html", null, true);
-            yield "\" class=\"card-link\">Delete</a>
-            </div>
-        </div>
-    ";
+            // line 20
+            yield "            <tr>
+                <th scope=\"row\">1</th>
+                <td>";
+            // line 22
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "firstname", [], "any", false, false, false, 22), "html", null, true);
+            yield "k</td>
+                <td>";
+            // line 23
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "name", [], "any", false, false, false, 23), "html", null, true);
+            yield "Mark</td>
+                <td>";
+            // line 24
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["personne"], "age", [], "any", false, false, false, 24), "html", null, true);
+            yield "</td>
+            </tr>
+            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['personne'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
-        yield "    ";
-        if ((isset($context["isPaginated"]) || array_key_exists("isPaginated", $context) ? $context["isPaginated"] : (function () { throw new RuntimeError('Variable "isPaginated" does not exist.', 20, $this->source); })())) {
-            // line 21
+        // line 27
+        yield "            </tbody>
+        </table>
+    ";
+        // line 29
+        if ((isset($context["isPaginated"]) || array_key_exists("isPaginated", $context) ? $context["isPaginated"] : (function () { throw new RuntimeError('Variable "isPaginated" does not exist.', 29, $this->source); })())) {
+            // line 30
             yield "    <div class=\"page\">
         <nav aria-label=\"Page navigation example\">
             <ul class=\"pagination justify-content-center\">
                 ";
-            // line 24
-            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 24, $this->source); })()) != 1)) {
-                // line 25
+            // line 33
+            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 33, $this->source); })()) != 1)) {
+                // line 34
                 yield "                <li class=\"page-item\">
                     <a class=\"page-link\" href=\"";
-                // line 26
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 26, $this->source); })()) - 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 26, $this->source); })())]), "html", null, true);
+                // line 35
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 35, $this->source); })()) - 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 35, $this->source); })())]), "html", null, true);
                 yield "\" tabindex=\"-1\">Précedent</a>
                 </li>
                 ";
             }
-            // line 29
+            // line 38
             yield "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(range(1, (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 29, $this->source); })())));
+            $context['_seq'] = CoreExtension::ensureTraversable(range(1, (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 38, $this->source); })())));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 30
+                // line 39
                 yield "                <li class=\"page-item\"><a class=\"page-link\" href=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne", ["page" => $context["i"], "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 30, $this->source); })())]), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne", ["page" => $context["i"], "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 39, $this->source); })())]), "html", null, true);
                 yield "\">";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["i"], "html", null, true);
                 yield "</a></li>
@@ -162,25 +164,25 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 32
+            // line 41
             yield "                ";
-            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 32, $this->source); })()) != (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 32, $this->source); })()))) {
-                // line 33
+            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 41, $this->source); })()) != (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 41, $this->source); })()))) {
+                // line 42
                 yield "                <li class=\"page-item\">
                     <a class=\"page-link\" href=\"";
-                // line 34
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 34, $this->source); })()) + 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 34, $this->source); })())]), "html", null, true);
+                // line 43
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_personne", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 43, $this->source); })()) + 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 43, $this->source); })())]), "html", null, true);
                 yield "\">Suivant</a>
                 </li>
                 ";
             }
-            // line 37
+            // line 46
             yield "            </ul>
         </nav>
     </div>
     ";
         }
-        // line 41
+        // line 50
         yield "</div>
 ";
         
@@ -213,7 +215,7 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  184 => 41,  178 => 37,  172 => 34,  169 => 33,  166 => 32,  155 => 30,  150 => 29,  144 => 26,  141 => 25,  139 => 24,  134 => 21,  131 => 20,  121 => 16,  117 => 15,  113 => 14,  107 => 13,  103 => 12,  99 => 10,  95 => 9,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  186 => 50,  180 => 46,  174 => 43,  171 => 42,  168 => 41,  157 => 39,  152 => 38,  146 => 35,  143 => 34,  141 => 33,  136 => 30,  134 => 29,  130 => 27,  121 => 24,  117 => 23,  113 => 22,  109 => 20,  105 => 19,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -226,17 +228,26 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
 
 <div class=\"row\">
     <h1> Liste des personnes </h1>
-    {% for personne in personnes %}
-        <div class=\"card\" style=\"width: 18rem;\">
-            <div class=\"card-body\">
-                <h5 class=\"card-title\">{{ personne.firstname }}</h5><br>
-                <h6 class=\"card-subtitle mb-2 text-body-secondary\"> Nom & Prenom : {{ personne.name }} {{ personne.firstname }}</h6>
-                <p class=\"card-text\">Age : {{ personne.age }}</p>
-                <a href=\"{{ path('detail_personne', {id: personne.id}) }}\" class=\"card-link\">Details</a>
-                <a href=\"{{ path('delete_personne', {id: personne.id}) }}\" class=\"card-link\">Delete</a>
-            </div>
-        </div>
-    {% endfor %}
+        <table class=\"table\">
+            <thead>
+            <tr>
+                <th scope=\"col\">#</th>
+                <th scope=\"col\">PRENOM</th>
+                <th scope=\"col\">NOM</th>
+                <th scope=\"col\">AGE</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for personne in personnes %}
+            <tr>
+                <th scope=\"row\">1</th>
+                <td>{{ personne.firstname }}k</td>
+                <td>{{ personne.name }}Mark</td>
+                <td>{{ personne.age }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     {% if isPaginated %}
     <div class=\"page\">
         <nav aria-label=\"Page navigation example\">

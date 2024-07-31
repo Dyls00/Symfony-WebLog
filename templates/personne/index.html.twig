@@ -6,17 +6,26 @@
 
 <div class="row">
     <h1> Liste des personnes </h1>
-    {% for personne in personnes %}
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{ personne.firstname }}</h5><br>
-                <h6 class="card-subtitle mb-2 text-body-secondary"> Nom & Prenom : {{ personne.name }} {{ personne.firstname }}</h6>
-                <p class="card-text">Age : {{ personne.age }}</p>
-                <a href="{{ path('detail_personne', {id: personne.id}) }}" class="card-link">Details</a>
-                <a href="{{ path('delete_personne', {id: personne.id}) }}" class="card-link">Delete</a>
-            </div>
-        </div>
-    {% endfor %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">PRENOM</th>
+                <th scope="col">NOM</th>
+                <th scope="col">AGE</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for personne in personnes %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ personne.firstname }}k</td>
+                <td>{{ personne.name }}Mark</td>
+                <td>{{ personne.age }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     {% if isPaginated %}
     <div class="page">
         <nav aria-label="Page navigation example">
