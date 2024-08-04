@@ -3,15 +3,13 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
-#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_FIRSTNAME', fields: ['firstname'])]
+#[ORM\UniqueConstraint(name: 'UNIQ_IDENTIFIER_EMAIL', fields: ['email'])]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -20,7 +18,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?int $id = null;
 
     #[ORM\Column(length: 180)]
-    private ?string $firstname = null;
+    private ?string $email = null;
 
     /**
      * @var list<string> The user roles
@@ -34,30 +32,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    /**
-     * @var Collection<int, Role>
-     */
-    #[ORM\ManyToMany(targetEntity: Role::class)]
-    private Collection $Role;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $firstname = null;
 
-    public function __construct()
-    {
-        $this->Role = new ArrayCollection();
-    }
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $name = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getFirstname(): ?string
+    public function getEmail(): ?string
     {
-        return $this->firstname;
+        return $this->email;
     }
 
-    public function setFirstname(string $firstname): static
+    public function setEmail(string $email): static
     {
-        $this->firstname = $firstname;
+        $this->email = $email;
 
         return $this;
     }
@@ -69,7 +62,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     public function getUserIdentifier(): string
     {
-        return (string) $this->firstname;
+        return (string) $this->email;
     }
 
     /**
@@ -120,26 +113,26 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
-    /**
-     * @return Collection<int, Role>
-     */
-    public function getRole(): Collection
+    public function getFirstname(): ?string
     {
-        return $this->Role;
+        return $this->firstname;
     }
 
-    public function addRole(Role $role): static
+    public function setFirstname(?string $firstname): static
     {
-        if (!$this->Role->contains($role)) {
-            $this->Role->add($role);
-        }
+        $this->firstname = $firstname;
 
         return $this;
     }
 
-    public function removeRole(Role $role): static
+    public function getName(): ?string
     {
-        $this->Role->removeElement($role);
+        return $this->name;
+    }
+
+    public function setName(?string $name): static
+    {
+        $this->name = $name;
 
         return $this;
     }

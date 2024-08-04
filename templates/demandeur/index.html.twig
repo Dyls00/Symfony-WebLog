@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste de demandeur{% endblock %}
+
+{% block body %}
+
+<div class="row">
+    <h1> Liste des demandeurs </h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">PRENOM</th>
+                <th scope="col">NOM</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for demandeur in demandeurs %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ demandeur.firstname }}k</td>
+                <td>{{ demandeur.email }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% if isPaginated %}
+    <div class="page">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                {% if page != 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('all_demandeur', {page: page - 1, nbre: nbre }) }}" tabindex="-1">Précedent</a>
+                </li>
+                {% endif %}
+                {% for i in range(1, nbrePage) %}
+                <li class="page-item"><a class="page-link" href="{{ path('all_demandeur', {page: i , nbre: nbre }) }}">{{ i }}</a></li>
+                {% endfor %}
+                {% if page != nbrePage %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ path('all_demandeur', {page: page + 1, nbre: nbre }) }}">Suivant</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

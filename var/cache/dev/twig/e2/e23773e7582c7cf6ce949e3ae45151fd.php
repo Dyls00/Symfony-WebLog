@@ -116,11 +116,11 @@ class __TwigTemplate_f46020aafc24ede7aed640aab96204ee extends Template
         // line 16
         yield "
     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputFirstname\">Firstname</label>
-    <input type=\"text\" value=\"";
+    <label for=\"inputEmail\">Email</label>
+    <input type=\"email\" value=\"";
         // line 19
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape((isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 19, $this->source); })()), "html", null, true);
-        yield "\" name=\"firstname\" id=\"inputFirstname\" class=\"form-control\" autocomplete=\"username\" required autofocus>
+        yield "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
     <label for=\"inputPassword\">Password</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 
@@ -194,8 +194,8 @@ class __TwigTemplate_f46020aafc24ede7aed640aab96204ee extends Template
     {% endif %}
 
     <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputFirstname\">Firstname</label>
-    <input type=\"text\" value=\"{{ last_username }}\" name=\"firstname\" id=\"inputFirstname\" class=\"form-control\" autocomplete=\"username\" required autofocus>
+    <label for=\"inputEmail\">Email</label>
+    <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
     <label for=\"inputPassword\">Password</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 

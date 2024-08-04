@@ -13,7 +13,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* /personne/index.html.twig */
+/* personne/index.html.twig */
 class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/personne/index.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "personne/index.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/personne/index.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "personne/index.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "/personne/index.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "personne/index.html.twig", 1);
         yield from $this->parent->unwrap()->yield($context, array_merge($this->blocks, $blocks));
         
         $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
@@ -199,7 +199,7 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
      */
     public function getTemplateName()
     {
-        return "/personne/index.html.twig";
+        return "personne/index.html.twig";
     }
 
     /**
@@ -271,6 +271,6 @@ class __TwigTemplate_d800f18fedb451247ab39b1b076169e3 extends Template
     {% endif %}
 </div>
 {% endblock %}
-", "/personne/index.html.twig", "C:\\Users\\user\\PhpstormProjects\\Symfony-WebLog\\templates\\personne\\index.html.twig");
+", "personne/index.html.twig", "C:\\Users\\user\\PhpstormProjects\\Symfony-WebLog\\templates\\personne\\index.html.twig");
     }
 }
