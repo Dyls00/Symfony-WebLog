@@ -45,22 +45,37 @@ class DemandeurController extends AbstractController
 
         // verifier si la requete a ete soumis
         if($form -> isSubmitted() /*&& $form -> isValid()*/){
-            // Hacher le mot de passe
-            $hashedPassword = $this->passwordHasher->hashPassword(
-                $demandeur,
-                $demandeur->getPassword()
-            );
-            $demandeur->setPassword($hashedPassword);
-            $manager = $doctrine -> getManager();
-            // si oui
-            //traiter le formulaire
-            $manager -> persist($demandeur);
-            //pousser vers la bdd
-            $manager -> flush();
-            // afficher un message de succes
-            $this -> addFlash('success', "La demandeur a été ajouter avec success");
-            // rediriger vers la liste de demandeur
-            return $this->redirectToRoute('demandeur_list');
+            $nom = $demandeur->getNom();
+            $prenom = $demandeur->getPrenom();
+
+            // Vérifier si le demandeur existe déjà
+            $existingDemandeur = $doctrine->getRepository(Demandeur::class)->findOneByNomPrenom($nom, $prenom);
+
+            if ($existingDemandeur) {
+                $this->addFlash('error', 'Un demandeur avec le même nom et prénom existe déjà.');
+            } else {
+                // Hacher le mot de passe
+                $hashedPassword = $this->passwordHasher->hashPassword(
+                    $demandeur,
+                    $demandeur->getPassword()
+                );
+                // Hacher le mot de passe
+                $hashedPassword = $this->passwordHasher->hashPassword(
+                    $demandeur,
+                    $demandeur->getPassword()
+                );
+                $demandeur->setPassword($hashedPassword);
+                $manager = $doctrine->getManager();
+                // si oui
+                //traiter le formulaire
+                $manager->persist($demandeur);
+                //pousser vers la bdd
+                $manager->flush();
+                // afficher un message de succes
+                $this->addFlash('success', "La demandeur a été ajouter avec success");
+                // rediriger vers la liste de demandeur
+            }
+                return $this->redirectToRoute('all_demandeur');
         }else{
             // si non
             // afficher le formulaire

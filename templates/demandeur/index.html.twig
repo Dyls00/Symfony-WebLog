@@ -12,14 +12,16 @@
                 <th scope="col">#</th>
                 <th scope="col">PRENOM</th>
                 <th scope="col">NOM</th>
+                <th scope="col">EMAIL</th>
             </tr>
             </thead>
             <tbody>
             {% for demandeur in demandeurs %}
             <tr>
                 <th scope="row">1</th>
-                <td>{{ demandeur.firstname }}k</td>
-                <td>{{ demandeur.email }}</td>
+                <td>{{ demandeur.getPrenom }}</td>
+                <td>{{ demandeur.getNom }}</td>
+                <td>{{ demandeur.getemail }}</td>
             </tr>
             {% endfor %}
             </tbody>

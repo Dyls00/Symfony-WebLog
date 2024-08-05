@@ -16,7 +16,8 @@ class DemandeurType extends AbstractType
         $builder
             ->add('email')
             ->add('password')
-            ->add('firstname')
+            ->add('prenom')
+            ->add('nom')
             ->add('valider',SubmitType::class);
         ;
     }

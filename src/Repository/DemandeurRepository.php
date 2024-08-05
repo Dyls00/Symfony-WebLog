@@ -33,6 +33,17 @@ class DemandeurRepository extends ServiceEntityRepository implements PasswordUpg
         $this->getEntityManager()->flush();
     }
 
+    public function findOneByNomPrenom(string $nom, string $prenom): ?Demandeur
+    {
+        return $this->createQueryBuilder('d')
+            ->andWhere('d.nom = :nom')
+            ->andWhere('d.prenom = :prenom')
+            ->setParameter('nom', $nom)
+            ->setParameter('prenom', $prenom)
+            ->getQuery()
+            ->getOneOrNullResult();
+    }
+
     //    /**
     //     * @return Demandeur[] Returns an array of Demandeur objects
     //     */

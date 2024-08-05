@@ -98,18 +98,22 @@ class __TwigTemplate_c93968c1641f9876c1e74e5d05d7419d extends Template
     <div class=\"row\">
         <div class=\"col\">";
         // line 12
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "firstname", [], "any", false, false, false, 12), 'row');
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 12, $this->source); })()), "prenom", [], "any", false, false, false, 12), 'row');
+        yield "</div>
+        <div class=\"col\">";
+        // line 13
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 13, $this->source); })()), "nom", [], "any", false, false, false, 13), 'row');
         yield "</div>
     </div>
     <div class=\"row\">
         <div class=\"col\">";
-        // line 15
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), "email", [], "any", false, false, false, 15), 'row');
+        // line 16
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 16, $this->source); })()), "email", [], "any", false, false, false, 16), 'row');
         yield "</div>
     </div>
     ";
-        // line 17
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 17, $this->source); })()), 'rest');
+        // line 18
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 18, $this->source); })()), 'rest');
         yield "
 </div>
 
@@ -145,7 +149,7 @@ class __TwigTemplate_c93968c1641f9876c1e74e5d05d7419d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  112 => 17,  107 => 15,  101 => 12,  96 => 10,  92 => 8,  82 => 7,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  116 => 18,  111 => 16,  105 => 13,  101 => 12,  96 => 10,  92 => 8,  82 => 7,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -161,7 +165,8 @@ class __TwigTemplate_c93968c1641f9876c1e74e5d05d7419d extends Template
 <div class=\"form \" style=\"width: 80%; margin-left: 5%\">
     {{ form_start(form) }}
     <div class=\"row\">
-        <div class=\"col\">{{ form_row(form.firstname) }}</div>
+        <div class=\"col\">{{ form_row(form.prenom) }}</div>
+        <div class=\"col\">{{ form_row(form.nom) }}</div>
     </div>
     <div class=\"row\">
         <div class=\"col\">{{ form_row(form.email) }}</div>
