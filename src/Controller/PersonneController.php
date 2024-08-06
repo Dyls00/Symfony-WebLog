@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Personne;
+use App\Entity\Unite;
 use App\Form\PersonneType;
+use App\Form\UniteType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -26,10 +28,12 @@ class PersonneController extends AbstractController
     #[Route('/add', name: 'add_personne')]
     public function addPersonne( ManagerRegistry $doctrine, Request $request): Response
     {
-        $manager = $doctrine -> getManager();
         $personne = new Personne();
-        // l'objet $personne est l'image de notre formulaire
-        $form = $this -> createForm(PersonneType::class, $personne);
+
+        // Ajouter une unité par défaut pour qu'elle apparaisse dans le formulaire
+        $personne->addUnite(new Unite());
+
+        $form = $this->createForm(PersonneType::class, $personne);
         // supprimer des champs
         //$form ->remove('nom du champ');
 

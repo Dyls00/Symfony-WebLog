@@ -90,7 +90,8 @@ class __TwigTemplate_61eeb32aa9ca78b9d8e26bc1a863797d extends Template
         yield "
 <div class=\"row\">
     <h1> Liste des demandeurs </h1>
-        <table class=\"table\">
+
+    <table class=\"table\">
             <thead>
             <tr>
                 <th scope=\"col\">#</th>
@@ -101,24 +102,24 @@ class __TwigTemplate_61eeb32aa9ca78b9d8e26bc1a863797d extends Template
             </thead>
             <tbody>
             ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["demandeurs"]) || array_key_exists("demandeurs", $context) ? $context["demandeurs"] : (function () { throw new RuntimeError('Variable "demandeurs" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["demandeurs"]) || array_key_exists("demandeurs", $context) ? $context["demandeurs"] : (function () { throw new RuntimeError('Variable "demandeurs" does not exist.', 20, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["demandeur"]) {
-            // line 20
+            // line 21
             yield "            <tr>
                 <th scope=\"row\">1</th>
                 <td>";
-            // line 22
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["demandeur"], "getPrenom", [], "any", false, false, false, 22), "html", null, true);
-            yield "</td>
-                <td>";
             // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["demandeur"], "getNom", [], "any", false, false, false, 23), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["demandeur"], "getPrenom", [], "any", false, false, false, 23), "html", null, true);
             yield "</td>
                 <td>";
             // line 24
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["demandeur"], "getemail", [], "any", false, false, false, 24), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["demandeur"], "getNom", [], "any", false, false, false, 24), "html", null, true);
+            yield "</td>
+                <td>";
+            // line 25
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["demandeur"], "getemail", [], "any", false, false, false, 25), "html", null, true);
             yield "</td>
             </tr>
             ";
@@ -126,36 +127,36 @@ class __TwigTemplate_61eeb32aa9ca78b9d8e26bc1a863797d extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['demandeur'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 28
         yield "            </tbody>
         </table>
     ";
-        // line 29
-        if ((isset($context["isPaginated"]) || array_key_exists("isPaginated", $context) ? $context["isPaginated"] : (function () { throw new RuntimeError('Variable "isPaginated" does not exist.', 29, $this->source); })())) {
-            // line 30
+        // line 30
+        if ((isset($context["isPaginated"]) || array_key_exists("isPaginated", $context) ? $context["isPaginated"] : (function () { throw new RuntimeError('Variable "isPaginated" does not exist.', 30, $this->source); })())) {
+            // line 31
             yield "    <div class=\"page\">
         <nav aria-label=\"Page navigation example\">
             <ul class=\"pagination justify-content-center\">
                 ";
-            // line 33
-            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 33, $this->source); })()) != 1)) {
-                // line 34
+            // line 34
+            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 34, $this->source); })()) != 1)) {
+                // line 35
                 yield "                <li class=\"page-item\">
                     <a class=\"page-link\" href=\"";
-                // line 35
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_demandeur", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 35, $this->source); })()) - 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 35, $this->source); })())]), "html", null, true);
+                // line 36
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_demandeur", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 36, $this->source); })()) - 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 36, $this->source); })())]), "html", null, true);
                 yield "\" tabindex=\"-1\">Précedent</a>
                 </li>
                 ";
             }
-            // line 38
+            // line 39
             yield "                ";
             $context['_parent'] = $context;
-            $context['_seq'] = CoreExtension::ensureTraversable(range(1, (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 38, $this->source); })())));
+            $context['_seq'] = CoreExtension::ensureTraversable(range(1, (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 39, $this->source); })())));
             foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
-                // line 39
+                // line 40
                 yield "                <li class=\"page-item\"><a class=\"page-link\" href=\"";
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_demandeur", ["page" => $context["i"], "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 39, $this->source); })())]), "html", null, true);
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_demandeur", ["page" => $context["i"], "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 40, $this->source); })())]), "html", null, true);
                 yield "\">";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["i"], "html", null, true);
                 yield "</a></li>
@@ -164,25 +165,25 @@ class __TwigTemplate_61eeb32aa9ca78b9d8e26bc1a863797d extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 41
+            // line 42
             yield "                ";
-            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 41, $this->source); })()) != (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 41, $this->source); })()))) {
-                // line 42
+            if (((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 42, $this->source); })()) != (isset($context["nbrePage"]) || array_key_exists("nbrePage", $context) ? $context["nbrePage"] : (function () { throw new RuntimeError('Variable "nbrePage" does not exist.', 42, $this->source); })()))) {
+                // line 43
                 yield "                <li class=\"page-item\">
                     <a class=\"page-link\" href=\"";
-                // line 43
-                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_demandeur", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 43, $this->source); })()) + 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 43, $this->source); })())]), "html", null, true);
+                // line 44
+                yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_demandeur", ["page" => ((isset($context["page"]) || array_key_exists("page", $context) ? $context["page"] : (function () { throw new RuntimeError('Variable "page" does not exist.', 44, $this->source); })()) + 1), "nbre" => (isset($context["nbre"]) || array_key_exists("nbre", $context) ? $context["nbre"] : (function () { throw new RuntimeError('Variable "nbre" does not exist.', 44, $this->source); })())]), "html", null, true);
                 yield "\">Suivant</a>
                 </li>
                 ";
             }
-            // line 46
+            // line 47
             yield "            </ul>
         </nav>
     </div>
     ";
         }
-        // line 50
+        // line 51
         yield "</div>
 ";
         
@@ -215,7 +216,7 @@ class __TwigTemplate_61eeb32aa9ca78b9d8e26bc1a863797d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  186 => 50,  180 => 46,  174 => 43,  171 => 42,  168 => 41,  157 => 39,  152 => 38,  146 => 35,  143 => 34,  141 => 33,  136 => 30,  134 => 29,  130 => 27,  121 => 24,  117 => 23,  113 => 22,  109 => 20,  105 => 19,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
+        return array (  187 => 51,  181 => 47,  175 => 44,  172 => 43,  169 => 42,  158 => 40,  153 => 39,  147 => 36,  144 => 35,  142 => 34,  137 => 31,  135 => 30,  131 => 28,  122 => 25,  118 => 24,  114 => 23,  110 => 21,  106 => 20,  90 => 6,  80 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -228,7 +229,8 @@ class __TwigTemplate_61eeb32aa9ca78b9d8e26bc1a863797d extends Template
 
 <div class=\"row\">
     <h1> Liste des demandeurs </h1>
-        <table class=\"table\">
+
+    <table class=\"table\">
             <thead>
             <tr>
                 <th scope=\"col\">#</th>

@@ -35,9 +35,16 @@ class Personne
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $password = null;
 
+    /**
+     * @var Collection<int, Unite>
+     */
+    #[ORM\ManyToMany(targetEntity: Unite::class, inversedBy: 'personnes')]
+    private Collection $unite;
+
     public function __construct()
     {
         $this->role = new ArrayCollection();
+        $this->unite = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -117,6 +124,31 @@ class Personne
     public function setPassword(?string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Unite>
+     */
+    public function getUnite(): Collection
+    {
+        return $this->unite;
+    }
+
+    public function addUnite(Unite $unite): self
+    {
+        if (!$this->unite->contains($unite)) {
+            $this->unite[] = $unite;
+            $unite->addPersonne($this); // Si nécessaire, en fonction de ta relation
+        }
+
+        return $this;
+    }
+
+    public function removeUnite(Unite $unite): static
+    {
+        $this->unite->removeElement($unite);
 
         return $this;
     }

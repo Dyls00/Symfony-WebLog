@@ -1,25 +1,26 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-
+    Ajouter une personne
 {% endblock %}
 
 {% block body %}
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
-<div class="form " style="width: 80%; margin-left: 5%">
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="col">{{ form_row(form.firstname) }}</div>
-    </div>
-    <div class="row">
-        <div class="col">{{ form_row(form.name) }}</div>
-    </div>
-    <div class="row">
-        <div class="col">{{ form_row(form.age) }}</div>
-        <div class="col">{{ form_row(form.role)  }}</div>
-    </div>
-    {{ form_rest(form) }}
-</div>
+    <div class="form" style="width: 80%; margin-left: 5%">
+        {{ form_start(form) }}
+        {{ form_row(form.firstname) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.age) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.role) }}
 
+        {# Affichage des unités imbriquées #}
+        <h3>Unités</h3>
+        <div id="unite_fields">
+            {{ form_widget(form.unite) }}
+        </div>
 
+        <button type="submit">Enregistrer</button>
+{{ form_end(form) }}
+    </div>
 {% endblock %}
